@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="DearDIary.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DearDIary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' Content="Save" HorizontalAlignment="Left" Height="87" Margin="123,643,0,0" VerticalAlignment="Top" Width="218"                     />
+        <TextBox x:Name="TextContent" HorizontalAlignment="Left" Height="534" Margin="126,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="530"/>
+        <ListView x:ConnectionId='2' x:Name="JournalEntryListview" 
+                  x:FieldModifier="public" 
+                                                                   
+                  Background="White" HorizontalAlignment="Left" 
+                  Height="534" Margin="819,58,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="485">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Grid Background="Gray"  Width="400" Height="100" Margin="0,10,0,0">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Date}" x:FieldModifier="public" Foreground="White" TextWrapping="Wrap" FontSize="12"/>
+                                <TextBlock Text="{Binding Content}" x:FieldModifier="public" Foreground="White" TextWrapping="Wrap" FontSize="12" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="126,30,0,0" TextWrapping="Wrap" Text="Journal" FontSize="20" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="819,30,0,0" TextWrapping="Wrap" Text="Entrys" FontSize="20" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
+
